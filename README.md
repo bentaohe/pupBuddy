@@ -103,7 +103,7 @@ Storyboard created here using [Invision](https://tayloroblack394892.invisionapp.
 
 ### Class Diagram Description
 
-Words go here.
+Our pupBuddy Controller uses our enterprise service interface. That interface is built from the pupBuddy enterprise DAO.
 
 
 ##	JSON Schema
@@ -163,13 +163,14 @@ Words go here.
 
 ## Link to Project on GitHub
 
-https://github.com/Yep-Was-Taken/pupBuddy
+[pupBuddy](https://github.com/Yep-Was-Taken/pupBuddy)
 
 
 ## Kanban board using GitHub projects
 
-https://github.com/Yep-Was-Taken/pupBuddy/projects/1
+[Project overview on GitHub](https://github.com/Yep-Was-Taken/pupBuddy/projects/1)
 
 
-## Link to Teams for your 3:00pm Thursday group stand up. 
-	https://teams.microsoft.com/l/meetup-join/19%3ameeting_YmNiYTE2YmEtY2VmMS00MTU5LWI3MzctOTI3OGY1YzVjMWE2%40thread.v2/0?context=%7b%22Tid%22%3a%22f5222e6c-5fc6-48eb-8f03-73db18203b63%22%2c%22Oid%22%3a%229a9d29f6-e526-4f31-9f1d-5f3c61729f4d%22%7d
+## Link to Teams Standup
+
+[We meet 3:00pm EST on Thursday on Teams](https://teams.microsoft.com/l/meetup-join/19%3ameeting_YmNiYTE2YmEtY2VmMS00MTU5LWI3MzctOTI3OGY1YzVjMWE2%40thread.v2/0?context=%7b%22Tid%22%3a%22f5222e6c-5fc6-48eb-8f03-73db18203b63%22%2c%22Oid%22%3a%229a9d29f6-e526-4f31-9f1d-5f3c61729f4d%22%7d)
