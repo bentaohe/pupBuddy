@@ -153,25 +153,23 @@ Words go here.
 >}
 
 
-6.	Scrum Roles, and who will fill those roles
-Scrum Master – Tony Herrera 
-UI/UX - Taylor O’Black
-Backend/DB – Molly Bischoff
-Integration developer – November Harris
-7.	github.com project link
+## Scrum Roles
+
+### Scrum Master – *Tony Herrera*
+### UI/UX - *Taylor O’Black*
+### Backend/DB – *Molly Bischoff*
+### Integration developer – *November Harris*
+
+
+## Link to Project on GitHub
+
 https://github.com/Yep-Was-Taken/pupBuddy
-(November is handling 8)
-8.	 A scrum or kanban board, using GitHub projects or something similar, that contains:
-•	
-	A milestone for Milestone #1, with tasks associated.
-	Projects for Milestone #1.
-	Tasked stores for Projects for Milestone #1.
-•	Sprint tasks that elaborate on the stories, with technical details.
-•	These should be technical tasks that are required to implement one of the features.
-•	You only need to task out stories for Sprint #1.  You can task out stories for Sprint #2 and #3 as we get closer to those sprints.
-o	The Product Owner/Scrum Master/DevOps person on your team should select stories to play for each sprint, from the list of available stories in the Product Backlog.
-	As long as you have the tasks in GitHub Projects, under Projects, and associated with milestones, you do not need to repeat them in the design doc.  I'll look at  the Project and Milestone view to see them.
-	Milestones for Milestone #2 and #3.  
-•	You do not need projects or tasks for these later milestones. You can define those in planning meetings, as we get closer.
-9) Link to Teams for your 3:00pm Thursday group stand up. 
+
+
+## Kanban board using GitHub projects
+
+https://github.com/Yep-Was-Taken/pupBuddy/projects/1
+
+
+## Link to Teams for your 3:00pm Thursday group stand up. 
 	https://teams.microsoft.com/l/meetup-join/19%3ameeting_YmNiYTE2YmEtY2VmMS00MTU5LWI3MzctOTI3OGY1YzVjMWE2%40thread.v2/0?context=%7b%22Tid%22%3a%22f5222e6c-5fc6-48eb-8f03-73db18203b63%22%2c%22Oid%22%3a%229a9d29f6-e526-4f31-9f1d-5f3c61729f4d%22%7d
