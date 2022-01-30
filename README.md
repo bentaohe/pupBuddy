@@ -1,12 +1,14 @@
-# Introduction
+# pupBuddy with IntelliJIDEA on GitHub
+
+## Introduction
 
 Pup Buddy allows households to track and share daily chores related to their pet. Members of a household can log their daily pet-related chores to the database which displays for all users to see in a friendly UI. Users can also add pets, edit their needs, edit their household, or their own responsibilities in their profile.
 
-# Storyboard
+## Storyboard
 
 Storyboard created here using [Invision](https://tayloroblack394892.invisionapp.com/freehand/PupBuddy-Y1VzEPXLP)
   
-3.	Functional Requirements in the format (fill in the square brackets with your own words):
+## Functional Requirements
 1.	As a dog owner, I want to record dog care activities, so that I can remember what has already been done.
 
 Given: A feed of dog care activities is available
