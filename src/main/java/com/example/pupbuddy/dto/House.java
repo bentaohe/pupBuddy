@@ -1,4 +1,4 @@
-package dto;
+package com.example.pupbuddy.dto;
 
 import lombok.Data;
 
