@@ -30,4 +30,19 @@ class PupBuddyApplicationTests {
     private void thenFeedDinnerActivityRecordedDone() {
     }
 
+    void feedDinnerActivityLoggedAsDone_returnsErrorMessageForDuplicateTask() {
+        givenFeedDinnerActivityLoggedDoneForDate();
+        whenAttemptLogFeedDinnerActivityForSameDate();
+        thenReturnErrorMessageDuplicateTask();
+    }
+
+    private void givenFeedDinnerActivityLoggedDoneForDate() {
+    }
+
+    private void whenAttemptLogFeedDinnerActivityForSameDate() {
+    }
+
+    private void thenReturnErrorMessageDuplicateTask() {
+    }
+
 }
