@@ -10,4 +10,24 @@ class PupBuddyApplicationTests {
     void contextLoads() {
     }
 
+    @Test
+    void selectFeedDinner_recordsFeedDinnerActivityAsDone() {
+        givenActivitiesFeedAvailable();
+        whenFeedSelected();
+        whenFeedDinnerActivityLoggedDone();
+        thenFeedDinnerActivityRecordedDone();
+    }
+
+    private void givenActivitiesFeedAvailable() {
+    }
+
+    private void whenFeedSelected() {
+    }
+
+    private void whenFeedDinnerActivityLoggedDone() {
+    }
+
+    private void thenFeedDinnerActivityRecordedDone() {
+    }
+
 }
