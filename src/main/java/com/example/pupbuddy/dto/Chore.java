@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Chore {
-    private int ChoreId;
+    private int choreId; //casing wrong
     private String choreName;
     private boolean choreComplete;
     private String choreStart;
