@@ -5,6 +5,8 @@ import com.example.pupbuddy.dto.Dog;
 import com.example.pupbuddy.dto.Human;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import lombok.Data;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

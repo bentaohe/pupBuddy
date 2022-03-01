@@ -2,11 +2,11 @@ package com.example.pupbuddy.dto;
 
 import lombok.Data;
 
-@Data
-public class Dog {
+
+public @Data class Dog {
     private int dogId;
-    private String name;
-    private String breed;
-    private int age;
+    private String dogName;
+    private String dogBreed;
+    private int dogAge;
     private int houseId;
 }
