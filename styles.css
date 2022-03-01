@@ -1,8 +1,17 @@
-.mb-2{
+.mb-2 {
     margin-bottom: 1em !important;
 }
 
-.mx-auto{
+.mx-auto {
     margin: 0 auto !important;
     display: block
+}
+
+.h4 {
+    text-align: center;
+}
+
+hr {
+    width: 75%;
+    text-align: center;
 }
