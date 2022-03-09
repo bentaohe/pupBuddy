@@ -2,12 +2,14 @@ package com.example.pupbuddy.dto;
 
 import lombok.Data;
 
+import java.util.Date;
+
 public @Data class Chore {
     private int choreId;
     private String choreName;
     private boolean choreComplete;
-    private String choreStart;
-    private String choreEnd;
+    private Date choreStart;
+    private Date choreEnd;
     private String dogId;
     private String humanId;
 
