@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <title>Log In</title>
   <meta charset="utf-8">
@@ -31,7 +31,7 @@
 
       <div class="container">
         <h2>Keep track of your doggy duties!</h2>
-        <form>
+        <form action="#" th:action="@{/login}">
           <div class="form-group">
             <label for="usr">Username:</label>
             <input type="text" class="form-control" id="usr">
@@ -41,7 +41,8 @@
             <input type="password" class="form-control" id="pwd">
           </div>
         </form>
-            <button type="button" class="btn btn-info" id="submitBtn">Login</button>
-            <button type="button" class="btn btn-info" id="submitBtn">Sign Up Now!</button>
+            <input id="Login_Id" type="hidden" name="loginId" th:field="*{loginId}"/>
+            <button type="submit" class="btn btn-info" id="loginBtn">Login</button>
+            <button action="#" th:action="@{/signup}" type="button" class="btn btn-info" id="signUpBtn">Sign Up Now!</button>
       </div>
 </body>
