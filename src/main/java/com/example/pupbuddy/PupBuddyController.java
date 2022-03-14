@@ -39,31 +39,27 @@ public class PupBuddyController {
 
     @RequestMapping("/")
     public String index(){
-        return "login.html";
+        return "login";
     }
 
-    @PostMapping("/login")
-    public String login(int id){
-        try{
-            Login foundLogin = loginService.fetchById(id);
-            Human foundHuman = humanService.fetchById(foundLogin.getHumanId());
-            House foundHouse = houseService.fetchById(foundHuman.getHouseId());
-            List<Dog> dogs = new ArrayList(foundHouse.getDogs().values());
-            List<Chore> chores = new ArrayList(foundHouse.getChores().values());
-            return "home";
-        }catch(Exception e){
-            return "error";
-        }
+    @PostMapping(value="/login", consumes="application/json", produces="application/json")
+    public String login(){
+        return "home";
     }
 
-    @PostMapping(value="/signup", consumes="application/json")
+    @PostMapping(value="/signup", consumes="application/json", produces="application/json")
     public String signup(@RequestBody Login login){
+        Login createdLogin = new Login();
+        createdLogin.setUsername(login.getUsername());
+        createdLogin.setPassword(login.getPassword());
         try {
-            Login createdLogin = loginService.save(login);
+            loginService.save(createdLogin);
             return "home";
         } catch (Exception e) {
             return "error";
         }
-
     }
+
+
+
 }
