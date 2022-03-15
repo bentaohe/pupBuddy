@@ -20,6 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 class PupBuddyApplicationTests {
 
+    private Chore chore = new Chore();
     private Chore dinner = new Chore();
     private Chore secondDinner = new Chore();
 
@@ -31,23 +32,23 @@ class PupBuddyApplicationTests {
     }
 
     @Test
-    void selectFeedDinner_recordsFeedDinnerActivityAsDone() {
+    void selectFeedDinner_recordsFeedDinnerActivityAsDone() throws Exception {
         givenActivitiesFeedAvailable();
-        whenFeedSelected();
         whenFeedDinnerActivityLoggedDone();
         thenFeedDinnerActivityRecordedDone();
     }
 
-    private void givenActivitiesFeedAvailable() {
-    }
-
-    private void whenFeedSelected() {
+    private void givenActivitiesFeedAvailable() throws Exception {
+        Mockito.when(choreDAO.save(chore)).thenReturn(chore);
     }
 
     private void whenFeedDinnerActivityLoggedDone() {
+        chore.setChoreEnd(new Date());
     }
 
     private void thenFeedDinnerActivityRecordedDone() {
+        // TODO in order to make this test pass, override setChoreEnd() to set choreComplete based on the value of choreEnd
+        assertEquals(true, chore.isChoreComplete());
     }
 
     @Test
