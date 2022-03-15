@@ -4,14 +4,11 @@ import com.example.pupbuddy.dao.IChoreDAO;
 import com.example.pupbuddy.dto.Chore;
 import com.example.pupbuddy.dto.Dog;
 import com.example.pupbuddy.dto.Human;
-import io.github.glytching.junit.extension.exception.ExpectedException;
-import org.junit.Rule;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.Assert.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import lombok.Data;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
@@ -54,7 +51,7 @@ class PupBuddyApplicationTests {
     }
 
     @Test
-    void feedDinnerActivityLoggedAsDone_returnsErrorMessageForDuplicateTask() throws Exception {
+    void feedDinnerActivityLoggedAsDone_returnsErrorMessageForDuplicateTask() {
         givenFeedDinnerActivityLoggedDoneForDate();
         whenAttemptLogFeedDinnerActivityForSameDate();
         thenReturnErrorMessageDuplicateTask();
@@ -65,7 +62,6 @@ class PupBuddyApplicationTests {
         dinner.setChoreId(1);
         dinner.setChoreName("Feed dinner");
         dinner.setChoreEnd(new Date(2022,1,1,18,0,0));
-        dinner.setChoreComplete(true);
         Mockito.when(choreDAO.fetch(1)).thenReturn(dinner);
     }
 
@@ -74,20 +70,21 @@ class PupBuddyApplicationTests {
         secondDinner.setChoreId(2);
         secondDinner.setChoreName("Feed dinner");
         secondDinner.setChoreEnd(new Date(2022,1,1,18,1,0));
-        secondDinner.setChoreComplete(true);
         Mockito.when(choreDAO.fetch(2)).thenReturn(secondDinner);
     }
 
-    private void thenReturnErrorMessageDuplicateTask() throws Exception {
-        assertThrows("Duplicate task", Throwable.class, () -> thenReturnErrorMessageDuplicateTask());
-        Calendar dinnerDate = Calendar.getInstance();
-        dinnerDate.setTime(choreDAO.fetch(1).getChoreEnd());
-        Calendar secondDinnerDate = Calendar.getInstance();
-        dinnerDate.setTime(choreDAO.fetch(2).getChoreEnd());
-        if(dinnerDate.get(Calendar.DAY_OF_MONTH) == secondDinnerDate.get(Calendar.DAY_OF_MONTH)) {
-            Mockito.when(choreDAO.save(secondDinner)).thenThrow(new Throwable("Duplicate task"));
+    private void thenReturnErrorMessageDuplicateTask() {
+        assertThrows(Exception.class, () -> {
+            Calendar dinnerDate = Calendar.getInstance();
+            dinnerDate.setTime(choreDAO.fetch(1).getChoreEnd());
+            Calendar secondDinnerDate = Calendar.getInstance();
+            secondDinnerDate.setTime(choreDAO.fetch(2).getChoreEnd());
+            if(dinnerDate.get(Calendar.YEAR) == secondDinnerDate.get(Calendar.YEAR)
+               && dinnerDate.get(Calendar.DAY_OF_MONTH) == secondDinnerDate.get(Calendar.DAY_OF_MONTH)) {
+                Mockito.when(choreDAO.save(secondDinner)).thenThrow(new Exception("Duplicate task"));
+            }
             choreDAO.save(secondDinner);
-        }
+        });
     }
 
     /**
