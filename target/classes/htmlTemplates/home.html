@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>PupBuddy</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -33,38 +33,46 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-4">
-        <div class="dropdown">
-            <h4>My Pet</h4>
-            <button class="btn btn-info dropdown-toggle btn-block mb-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pet #1
-            </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a href="#">Pet #1</a></li>
-                    <li><a href="#">Pet #2</a></li>
-                    <li><a href="#">Pet #3</a></li>
-                </ul>
-          </div>
+    <div class="col-sm-4" id="left-side">
+      <p class="h4">My Pet</p><hr>
+          <form>
+            <div class="form-group">
+              <label for="sel1">What pet would you like to see?</label>
+              <select class="form-control" id="selPet">
+                <option>Pet #1</option>
+                <option>Pet #2</option>
+                <option>Pet #3</option>
+              </select>
+            </div>
+            <img class="img-responsive" src="nolan.PNG" alt="pet #1">
+          </form> 
     </div>
     <div class="col-sm-4">
-        <h4>Today's chores</h4>
+      <p class="h4">Today's chores</p><hr>
         <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action list-group-item-info">9:52 - Mom fed Pet #1</a>
             <a href="#" class="list-group-item list-group-item-action list-group-item-info">12:01 - Dad Took Pet #1 Potty</a>
     </div>
     </div>
     <div class="col-sm-4">
-        <h4>Have a chore to report?</h4>
-        <div class="dropdown">
-        <button class="btn btn-info dropdown-toggle btn-block mb-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Report A Chore</button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a href="#">Fed Pet</a></li>
-                  <li><a href="#">Took Pet Potty</a></li>
-                  <li><a href="#">Took Pet on Walk</a></li>
-              </ul>
-        </div>
-        <button type="button" class="btn btn-info btn-block mb-2">Select a Time</button>
-        <button type="button" class="btn btn-info mx-auto" style="width:200px">Submit Chore</button>
+      <p class="h4">Have a chore to report?</p><hr>
+        <form>
+          <div class="form-group">
+            <label for="sel1">What chore did you do?</label>
+            <select class="form-control" id="sel1">
+              <option>Fed Pet</option>
+              <option>Took Pet Potty</option>
+              <option>Took Pet on Walk</option>
+            </select>
+          </div>
+            <div class="form-group">
+              <label for="sel2">When was the chore completed?</label>
+              <input type="time" class="form-control" id="sel2">
+            </div>
+            <button type="submit" class="btn btn-info mx-auto"style="width:200px">Submit Chore</button>
+        </form>
     </div>
   </div>
 </div>
+</body>
+</html>
