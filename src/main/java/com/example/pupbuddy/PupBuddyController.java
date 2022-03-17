@@ -39,25 +39,7 @@ public class PupBuddyController {
 
     @RequestMapping("/")
     public String index(){
-        return "login";
-    }
-
-    @PostMapping(value="/login", consumes="application/json", produces="application/json")
-    public String login(){
         return "home";
-    }
-
-    @PostMapping(value="/signup", consumes="application/json", produces="application/json")
-    public String signup(@RequestBody Login login){
-        Login createdLogin = new Login();
-        createdLogin.setUsername(login.getUsername());
-        createdLogin.setPassword(login.getPassword());
-        try {
-            loginService.save(createdLogin);
-            return "home";
-        } catch (Exception e) {
-            return "error";
-        }
     }
 
 
