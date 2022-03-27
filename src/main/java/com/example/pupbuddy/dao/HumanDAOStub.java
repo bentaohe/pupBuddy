@@ -1,5 +1,6 @@
 package com.example.pupbuddy.dao;
 
+import com.example.pupbuddy.dto.Chore;
 import com.example.pupbuddy.dto.Human;
 
 import java.util.ArrayList;
@@ -8,28 +9,31 @@ import java.util.List;
 import java.util.Map;
 
 public class HumanDAOStub implements IHumanDAO{
-    private Map<Integer, Human> allHumans = new HashMap<>();
+    private ArrayList<Human> allHumans = new ArrayList<>();
 
     @Override
     public Human save(Human human) throws Exception {
-        Integer humanId = human.getHumanId();
-        allHumans.put(humanId, human);
+        allHumans.add(human);
         return human;
     }
 
     @Override
     public List<Human> fetchAll() {
-        List<Human> humanList = new ArrayList<>(allHumans.values());
-        return humanList;
+        return allHumans;
     }
 
     @Override
-    public Human fetch(int id) {
-        return allHumans.get(id);
+    public Human fetch(String id) {
+        for (Human human : allHumans) {
+            if (human.getHumanId().equals(id)) {
+                return human;
+            }
+        }
+        return null;
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(String id) {
         allHumans.remove(id);
     }
 }

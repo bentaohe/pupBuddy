@@ -10,7 +10,7 @@ public interface IChoreDAO {
 
     List<Chore> fetchAll();
 
-    Chore fetch(int id);
+    Chore fetch(String id);
 
-    void delete(int id);
+    void delete(String id);
 }

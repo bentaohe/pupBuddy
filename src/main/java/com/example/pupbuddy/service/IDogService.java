@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface IDogService {
 
-    Dog fetchById(int id);
+    Dog fetchById(String id);
 
-    void delete(int id) throws Exception;
+    void delete(String id) throws Exception;
 
     Dog save(Dog dog) throws Exception;
 

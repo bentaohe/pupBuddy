@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface IChoreService {
 
-    Chore fetchById(int id);
+    Chore fetchById(String id);
 
-    void delete(int id) throws Exception;
+    void delete(String id) throws Exception;
 
     Chore save(Chore chore) throws Exception;
 

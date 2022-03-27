@@ -16,13 +16,13 @@ public class DogServiceStub implements IDogService{
     public DogServiceStub(IDogDAO dogDAO){this.dogDAO = dogDAO;}
 
     @Override
-    public Dog fetchById(int id) {
+    public Dog fetchById(String id) {
         Dog foundDog = dogDAO.fetch(id);
         return foundDog;
     }
 
     @Override
-    public void delete(int id) throws Exception {
+    public void delete(String id) throws Exception {
         dogDAO.delete(id);
     }
 

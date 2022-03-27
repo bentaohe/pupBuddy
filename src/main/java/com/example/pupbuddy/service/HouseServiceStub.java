@@ -16,13 +16,13 @@ public class HouseServiceStub implements IHouseService{
     public HouseServiceStub(IHouseDAO houseDAO){this.houseDAO = houseDAO;}
 
     @Override
-    public House fetchById(int id) {
+    public House fetchById(String id) {
         House foundHouse = houseDAO.fetch(id);
         return foundHouse;
     }
 
     @Override
-    public void delete(int id) throws Exception {
+    public void delete(String id) throws Exception {
         houseDAO.delete(id);
     }
 

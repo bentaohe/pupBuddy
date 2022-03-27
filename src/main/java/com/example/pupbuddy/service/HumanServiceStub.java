@@ -16,13 +16,13 @@ public class HumanServiceStub implements IHumanService{
     public HumanServiceStub(IHumanDAO humanDAO){this.humanDAO = humanDAO;}
 
     @Override
-    public Human fetchById(int id) {
+    public Human fetchById(String id) {
         Human foundHuman = humanDAO.fetch(id);
         return foundHuman;
     }
 
     @Override
-    public void delete(int id) throws Exception {
+    public void delete(String id) throws Exception {
         humanDAO.delete(id);
     }
 

@@ -1,5 +1,6 @@
 package com.example.pupbuddy.dao;
 
+import com.example.pupbuddy.dto.Chore;
 import com.example.pupbuddy.dto.Dog;
 import com.example.pupbuddy.dto.House;
 
@@ -9,28 +10,31 @@ import java.util.List;
 import java.util.Map;
 
 public class HouseDAOStub implements IHouseDAO{
-    private Map<Integer, House> allHomes = new HashMap<>();
+    private ArrayList<House> allHouses = new ArrayList<>();
 
     @Override
     public House save(House house) throws Exception {
-        Integer houseId = house.getHouseId();
-        allHomes.put(houseId, house);
+        allHouses.add(house);
         return house;
     }
 
     @Override
     public List<House> fetchAll() {
-        List<House> houseList = new ArrayList<House>(allHomes.values());
-        return houseList;
+        return allHouses;
     }
 
     @Override
-    public House fetch(int id) {
-        return allHomes.get(id);
+    public House fetch(String id) {
+        for (House house : allHouses) {
+            if (house.getHouseId().equals(id)) {
+                return house;
+            }
+        }
+        return null;
     }
 
     @Override
-    public void delete(int id) {
-        allHomes.remove(id);
+    public void delete(String id) {
+        allHouses.remove(id);
     }
 }

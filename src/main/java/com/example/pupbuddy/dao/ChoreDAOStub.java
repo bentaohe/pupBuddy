@@ -8,28 +8,31 @@ import java.util.List;
 import java.util.Map;
 
 public class ChoreDAOStub implements IChoreDAO{
-    private Map<Integer, Chore> allChores = new HashMap<>();
+    private ArrayList<Chore> allChores = new ArrayList<>();
 
     @Override
     public Chore save(Chore chore) throws Exception {
-        Integer choreId = chore.getChoreId();
-        allChores.put(choreId, chore);
+        allChores.add(chore);
         return chore;
     }
 
     @Override
     public List<Chore> fetchAll() {
-        List<Chore> choreList = new ArrayList(allChores.values());
-        return choreList;
+        return allChores;
     }
 
     @Override
-    public Chore fetch(int id) {
-        return allChores.get(id);
+    public Chore fetch(String id) {
+        for (Chore chore : allChores) {
+            if (chore.getChoreId().equals(id)) {
+                return chore;
+            }
+        }
+        return null;
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(String id) {
         allChores.remove(id);
     }
 }

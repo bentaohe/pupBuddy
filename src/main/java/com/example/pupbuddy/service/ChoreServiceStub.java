@@ -16,13 +16,13 @@ public class ChoreServiceStub implements IChoreService{
     public ChoreServiceStub(IChoreDAO choreDAO) {this.choreDAO = choreDAO;}
 
     @Override
-    public Chore fetchById(int id) {
+    public Chore fetchById(String id) {
         Chore foundChore = choreDAO.fetch(id);
         return foundChore;
     }
 
     @Override
-    public void delete(int id) throws Exception {
+    public void delete(String id) throws Exception {
         choreDAO.delete(id);
     }
 

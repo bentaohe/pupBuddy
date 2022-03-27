@@ -60,26 +60,26 @@ class PupBuddyApplicationTests {
 
     private void givenFeedDinnerActivityLoggedDoneForDate() {
         dinner = new Chore();
-        dinner.setChoreId(1);
+        dinner.setChoreId("1");
         dinner.setChoreName("Feed dinner");
         dinner.setChoreEnd(new Date(2022,1,1,18,0,0));
-        Mockito.when(choreDAO.fetch(1)).thenReturn(dinner);
+        Mockito.when(choreDAO.fetch("1")).thenReturn(dinner);
     }
 
     private void whenAttemptLogFeedDinnerActivityForSameDate() {
         secondDinner = new Chore();
-        secondDinner.setChoreId(2);
+        secondDinner.setChoreId("2");
         secondDinner.setChoreName("Feed dinner");
         secondDinner.setChoreEnd(new Date(2022,1,1,18,1,0));
-        Mockito.when(choreDAO.fetch(2)).thenReturn(secondDinner);
+        Mockito.when(choreDAO.fetch("2")).thenReturn(secondDinner);
     }
 
     private void thenReturnErrorMessageDuplicateTask() {
         assertThrows(Exception.class, () -> {
             Calendar dinnerDate = Calendar.getInstance();
-            dinnerDate.setTime(choreDAO.fetch(1).getChoreEnd());
+            dinnerDate.setTime(choreDAO.fetch("1").getChoreEnd());
             Calendar secondDinnerDate = Calendar.getInstance();
-            secondDinnerDate.setTime(choreDAO.fetch(2).getChoreEnd());
+            secondDinnerDate.setTime(choreDAO.fetch("2").getChoreEnd());
             if(dinnerDate.get(Calendar.YEAR) == secondDinnerDate.get(Calendar.YEAR)
                && dinnerDate.get(Calendar.DAY_OF_MONTH) == secondDinnerDate.get(Calendar.DAY_OF_MONTH)) {
                 Mockito.when(choreDAO.save(secondDinner)).thenThrow(new Exception("Duplicate task"));

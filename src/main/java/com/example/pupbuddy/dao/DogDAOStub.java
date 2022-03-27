@@ -1,5 +1,6 @@
 package com.example.pupbuddy.dao;
 
+import com.example.pupbuddy.dto.Chore;
 import com.example.pupbuddy.dto.Dog;
 
 import java.util.ArrayList;
@@ -8,28 +9,31 @@ import java.util.List;
 import java.util.Map;
 
 public class DogDAOStub implements IDogDAO{
-    private Map<Integer, Dog> allDogs = new HashMap<>();
+    private ArrayList<Dog> allDogs = new ArrayList<>();
 
     @Override
     public Dog save(Dog dog) throws Exception {
-        Integer dogId = dog.getDogId();
-        allDogs.put(dogId, dog);
+        allDogs.add(dog);
         return dog;
     }
 
     @Override
     public List<Dog> fetchAll() {
-        List<Dog> dogList = new ArrayList<>(allDogs.values());
-        return dogList;
+        return allDogs;
     }
 
     @Override
-    public Dog fetch(int id) {
-        return allDogs.get(id);
+    public Dog fetch(String id) {
+        for (Dog dog : allDogs) {
+            if (dog.getDogId().equals(id)) {
+                return dog;
+            }
+        }
+        return null;
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(String id) {
         allDogs.remove(id);
     }
 }

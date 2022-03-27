@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface IHumanService {
 
-    Human fetchById(int id);
+    Human fetchById(String id);
 
-    void delete(int id) throws Exception;
+    void delete(String id) throws Exception;
 
     Human save(Human human) throws Exception;
 

@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface IHouseService {
 
-    House fetchById(int id);
+    House fetchById(String id);
 
-    void delete(int id) throws Exception;
+    void delete(String id) throws Exception;
 
     House save(House house) throws Exception;
 
