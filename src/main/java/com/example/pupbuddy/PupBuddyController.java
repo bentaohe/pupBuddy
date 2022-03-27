@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PupBuddyController {
 
+    /**
+     * Handle the root (/) endpoint and return a start page.
+     * @return the home page.
+     */
     @RequestMapping("/")
     public String index(){
         return "start";
