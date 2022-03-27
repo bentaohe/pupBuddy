@@ -2,7 +2,6 @@ package com.example.pupbuddy.dao;
 
 import com.example.pupbuddy.dto.Chore;
 
-import java.util.HashMap;
 import java.util.List;
 
 public interface IChoreDAO {
