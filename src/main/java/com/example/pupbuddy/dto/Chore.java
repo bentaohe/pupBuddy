@@ -4,7 +4,8 @@ import lombok.Data;
 
 import java.util.Date;
 
-public @Data class Chore {
+@Data
+public class Chore {
     private int choreId;
     private String choreName;
     private boolean choreComplete;
