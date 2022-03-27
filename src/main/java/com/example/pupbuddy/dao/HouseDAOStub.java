@@ -1,6 +1,6 @@
 package com.example.pupbuddy.dao;
 
-import com.example.pupbuddy.dto.Dog;
+
 import com.example.pupbuddy.dto.House;
 
 import java.util.ArrayList;
