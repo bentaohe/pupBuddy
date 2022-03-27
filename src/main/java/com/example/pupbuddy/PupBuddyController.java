@@ -4,8 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * PupBuddyController
- * Comment to document what PupBuddyController does
+ * The controller for pupBuddy REST endpoints and web UI
+ *
+ * This class handles the CRUD operations for pupBuddy activities, via HTTP actions.
+ *
+ * This class also serves HTML based web pages, for UI interactions with activities.
+ * @author
  */
 
 @Controller
