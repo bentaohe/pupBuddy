@@ -9,7 +9,7 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
-import lombok.Data;
+
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.Calendar;
