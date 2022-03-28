@@ -11,7 +11,7 @@ public class ChoreDAOStub implements IChoreDAO{
     private ArrayList<Chore> allChores = new ArrayList<>();
 
     @Override
-    public Chore save(Chore chore) throws Exception {
+    public Chore save(Chore chore) {
         allChores.add(chore);
         return chore;
     }
