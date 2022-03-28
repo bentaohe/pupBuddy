@@ -5,7 +5,8 @@ import lombok.Data;
 import java.util.HashMap;
 import java.util.Map;
 
-public @Data class House {
+@Data
+public class House {
     private String houseId;
     private Map<Integer, Human> humans = new HashMap<>();
     private Map<Integer, Dog> dogs = new HashMap<>();
